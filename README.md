@@ -24,8 +24,8 @@ I noticed a few things...
 
 - Frequently check out your training and test error.
 
-Also, I am new to this and am stil learning.
+Also, I am new to this and am still learning.
 
-I find trhe field of Machine Learning very interesting and I will continue posting new projects and things I learn and go along.
+I find the field of Machine Learning very interesting and I will continue posting new projects and things I learn and go along.
 
 
