@@ -18,7 +18,7 @@ to test the classifier.
 
 I noticed a few things...
 
-- To keep your NN from overfitting, use Dropout, otherwise the NN will "get used to trends or memorize the data", in stead of seeing the general trend of things.
+- To keep your NN from overfitting, use Dropout, otherwise the NN will "get used to trends or memorize the data", instead of seeing the general trend of things.
 
 - Minimize the model's complexity, keep in mind your size of your cross-validation.
 
