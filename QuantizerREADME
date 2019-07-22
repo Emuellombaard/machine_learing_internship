@@ -1,0 +1,48 @@
+This readme will serve as documentation to a program we built to quantize a neural network.
+
+This program is based on a published conference paper,Incremental Network Quantization: Towards Lossless CNNs with Low-Precision Weights ,
+by Aojun Zhou, Anbang Yao, Yiwen Guo, Lin Xu, Yurong Chen and an example of a PyTorch Implementation by MXbonn.
+
+The link to his github page can be found here... https://github.com/Mxbonn/INQ-pytorch
+
+The the link to the paper can be found here.
+
+NOTE... This program performs quantization on a pre-trained network. 
+
+All of the necessary notebooks are uploaded to the github page.
+
+Make sure to load up a pretrained model as well as its training data before you begin qunatization.
+We used Unet in here but any pytorch model should be compatable with it.
+The tester module was just for the presentation and labels its printouts according to what we needed at the time
+
+Quantization.py
+
+This contains 3 functions and a constructable object
+
+The three functions are:
+
+----------
+
+Unpack: used in loading a quantized model that was saved in int8, it converts an int into a power of two
+
+save_quantized_model: saves a quantized model in integers. REQUIRES FOR THE MODEL TO HAVE BEEN QUANTIZED INTO INTEGERS BEFOREHAND USING INQScheduler.quantize_int
+
+load_quantized_model: Loads a quantized model in integers
+
+----------
+
+INQSchedular:
+
+this constructable object handles all quantization. To construct it must be given your models optimizer as an argument and the size of incremental steps you wish it to quantize in
+
+it contains the following functions:
+
+step: Takes the next incremental step in the quantization process. It is the main function to call while quantizing
+
+quantize: NOT TO BE CALLED ON ITS OWN. called in the qauntization process to handle the physical quantization process
+
+quantize_weight: NOT TO BE CALLED ON ITS OWN. Quantizes a single weight, called by quantize
+
+quantize_int: quantizes the whole network into the exponent integer instead of usual float
+
+quantize_weight_int: NOT TO BE CALLED ON ITS OWN. Quantized a single weight to an int
